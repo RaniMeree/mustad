@@ -607,7 +607,7 @@ function TermsConditions() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/mustad">
       <Routes>
         <Route path="/" element={<>
           <Navbar />
