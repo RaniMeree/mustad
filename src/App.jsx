@@ -357,9 +357,9 @@ function ContactForm() {
                 </a>
               </div>
               <div className="contact-info-item">
-                <a href="tel:+971501234567">
+                <a href="tel:+971523198911">
                   <Phone size={20} />
-                  <span>+971 50 123 4567</span>
+                  <span>00971523198911</span>
                 </a>
               </div>
               <div className="contact-info-item whatsapp-item">
