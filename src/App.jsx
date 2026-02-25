@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { Instagram, Video, MessageCircle, ArrowRight, Calendar, Clapperboard, Palette, Rocket, Check, MapPin, Clock, Mail, Phone, Film, Camera, Share2, Users, FileText, Shield } from 'lucide-react'
+import { Instagram, Video, MessageCircle, ArrowRight, Calendar, Clapperboard, Palette, Rocket, Check, MapPin, Clock, Mail, Phone, Film, Camera, Share2, Users, FileText, Shield, Send, Linkedin } from 'lucide-react'
 
 const videos = [
   'https://player.vimeo.com/video/1157490752?title=0&byline=0&portrait=0',
@@ -298,6 +298,31 @@ function Testimonials() {
   )
 }
 
+function Contact() {
+  return (
+    <section className="contact" id="contact">
+      <div className="container">
+        <h2 className="contact-title">Get In Touch</h2>
+        <p className="contact-subtitle">Follow us or send us a message</p>
+        <div className="social-links">
+          <a href="https://www.instagram.com/mustad.ae?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="social-link">
+            <Instagram size={18} />
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.tiktok.com/@sari.dxb?_t=8lY5zGXTAjS&_r=1" target="_blank" rel="noopener noreferrer" className="social-link">
+            <Video size={18} />
+            <span>TikTok</span>
+          </a>
+          <a href="https://wa.me/971523198911" target="_blank" rel="noopener noreferrer" className="social-link">
+            <MessageCircle size={18} />
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
@@ -305,7 +330,7 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
     const text = `*New Inquiry*\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
-    window.open(`https://wa.me/971501234567?text=${encodeURIComponent(text)}`, '_blank')
+    window.open(`https://wa.me/971523198911?text=${encodeURIComponent(text)}`, '_blank')
     setSubmitted(true)
   }
 
@@ -326,13 +351,27 @@ function ContactForm() {
                 <span>Sat - Thu: 10AM - 8PM</span>
               </div>
               <div className="contact-info-item">
-                <Mail size={20} />
-                <span>hello@mustad.ae</span>
+                <a href="mailto:sari@mustad.ae">
+                  <Mail size={20} />
+                  <span>sari@mustad.ae</span>
+                </a>
               </div>
               <div className="contact-info-item">
-                <Phone size={20} />
-                <span>+971 50 123 4567</span>
+                <a href="tel:+971501234567">
+                  <Phone size={20} />
+                  <span>+971 50 123 4567</span>
+                </a>
               </div>
+              <div className="contact-info-item whatsapp-item">
+                <a href="https://wa.me/971523198911" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle size={20} />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+              <a href="https://wa.me/971523198911?text=Hi%20Mustad,%20I'm%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp">
+                <Send size={18} />
+                <span>Chat on WhatsApp</span>
+              </a>
             </div>
           </div>
           <form className="form" onSubmit={handleSubmit}>
@@ -571,7 +610,7 @@ function PrivacyPolicy() {
           <h3>Data Protection</h3>
           <p>We implement appropriate security measures to protect your personal information against unauthorized access.</p>
           <h3>Contact Us</h3>
-          <p>For privacy concerns, contact us at hello@mustad.ae</p>
+          <p>For privacy concerns, contact us at sari@mustad.ae</p>
         </div>
       </section>
     </div>
@@ -598,7 +637,7 @@ function TermsConditions() {
           <h3>Cancellations</h3>
           <p>Cancellation fees may apply depending on the stage of project completion.</p>
           <h3>Contact Us</h3>
-          <p>For questions, contact us at hello@mustad.ae</p>
+          <p>For questions, contact us at sari@mustad.ae</p>
         </div>
       </section>
     </div>
@@ -616,6 +655,7 @@ function App() {
           <Packages />
           <Portfolio />
           <Testimonials />
+          <Contact />
           <ContactForm />
           <Footer />
         </>} />
