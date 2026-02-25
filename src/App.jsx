@@ -438,6 +438,20 @@ function Footer() {
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms & Conditions</Link>
           </div>
+          <div className="footer-links">
+            <h4>Follow Us</h4>
+            <div className="footer-social">
+              <a href="https://www.instagram.com/mustad.ae?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram size={20} />
+              </a>
+              <a href="https://www.tiktok.com/@sari.dxb?_t=8lY5zGXTAjS&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <Video size={20} />
+              </a>
+              <a href="https://wa.me/971523198911" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <MessageCircle size={20} />
+              </a>
+            </div>
+          </div>
         </div>
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Mustad LLC. All rights reserved.</p>

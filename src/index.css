@@ -116,6 +116,9 @@ section{padding:clamp(4rem,10vw,8rem) 0}
 .footer-links h4{font-family:var(--font-display);font-size:.8125rem;font-weight:500;margin-bottom:1rem;letter-spacing:.05em}
 .footer-links a{display:block;color:var(--text-muted);text-decoration:none;font-size:.8125rem;margin-bottom:.625rem;transition:color .25s}
 .footer-links a:hover{color:var(--accent)}
+.footer-social{display:flex;gap:1rem}
+.footer-social a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:50%;color:var(--text-secondary);transition:all .3s}
+.footer-social a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
 .footer-bottom{text-align:center;padding-top:2rem;border-top:1px solid var(--border-subtle)}
 .footer-bottom p{color:var(--text-muted);font-size:.75rem}
 .page{padding-top:100px}
