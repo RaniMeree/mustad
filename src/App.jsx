@@ -324,16 +324,6 @@ function Contact() {
 }
 
 function ContactForm() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const text = `*New Inquiry*\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
-    window.open(`https://wa.me/971523198911?text=${encodeURIComponent(text)}`, '_blank')
-    setSubmitted(true)
-  }
-
   return (
     <section className="contact-form" id="contact-form">
       <div className="container">
@@ -374,35 +364,49 @@ function ContactForm() {
               </a>
             </div>
           </div>
-          <form className="form" onSubmit={handleSubmit}>
-            {submitted ? (
-              <div className="form-success">
-                <Check size={48} />
-                <h3>Thank you!</h3>
-                <p>We'll be in touch soon.</p>
-              </div>
-            ) : (
-              <>
-                <div className="form-group">
-                  <input type="text" placeholder="Your Name *" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
-                </div>
-                <div className="form-row">
-                  <input type="email" placeholder="Email *" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
-                  <input type="tel" placeholder="Phone Number" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
-                </div>
-                <select value={formData.service} onChange={e => setFormData({...formData, service: e.target.value})} required>
-                  <option value="">Select Service *</option>
-                  <option value="video">Video Production</option>
-                  <option value="photo">Photography</option>
-                  <option value="reels">Reels/TikTok</option>
-                  <option value="social">Social Media Management</option>
-                  <option value="event">Corporate Events</option>
-                  <option value="other">Other</option>
-                </select>
-                <textarea placeholder="Tell us about your project..." rows="4" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
-                <button type="submit" className="btn btn-primary">Send Message</button>
-              </>
-            )}
+          <form
+            className="form"
+            action="https://formspree.io/f/xykdvyan"
+            method="POST"
+          >
+            <div className="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name *"
+                required
+              />
+            </div>
+            <div className="form-row">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email *"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+              />
+            </div>
+            <select name="service" required>
+              <option value="">Select Service *</option>
+              <option value="video">Video Production</option>
+              <option value="photo">Photography</option>
+              <option value="reels">Reels/TikTok</option>
+              <option value="social">Social Media Management</option>
+              <option value="event">Corporate Events</option>
+              <option value="other">Other</option>
+            </select>
+            <textarea
+              name="message"
+              placeholder="Tell us about your project..."
+              rows="4"
+            ></textarea>
+            <button type="submit" className="btn btn-primary">
+              Send Message
+            </button>
           </form>
         </div>
       </div>
